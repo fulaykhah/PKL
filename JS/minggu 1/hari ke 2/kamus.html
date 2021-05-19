@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamus</title>
+</head>
+<body>
+    <div class="container">
+        <p><b>Bahasa Inggris</b></p>
+        <input type="text" id="kata" placeholder="Masukan kata...">
+        <p><b>Bahasa Indonesia </b></p>
+        <div id="hasil"></div>
+    </div>
+    <br>
+    <button onclick="terjemah()">Translate</button>
+    <br>
+    <table id="output">
+
+    </table>
+
+    <script>
+        var indo = ["minggu", "senin", "selasa", "rabu", "kamis", "jumat", "sabtu"]
+        var inggris = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+
+
+function terjemah() {
+
+    var kata = document.getElementById("kata").value;
+
+    let i = 0;
+    for (i; i <= indo.length;) {
+
+        if (kata == "" || !kata) {
+            var katas = "Masukan Kata";
+        } else if (kata == inggris[i]) {
+            var katas = indo[i];
+            document.getElementById("hasil").innerHTML = katas;
+        }
+        i++
+    }
+};
+
+function tambah() {
+    var kataind = document.getElementById("ind").value;
+    var kataing = document.getElementById("ing").value;
+
+    indo.push(kataind);
+    inggris.push(kataing);
+    tampil();
+
+}
+
+function tampil() {
+    var tabel = document.getElementById("output");
+    tabel.innerHTML = "<tr><th>No</th><th>Bahasa Indonesia</th><th>Bahasa Inggris</th><th>Action</th></tr>";
+    for (let i = 0; i < indo.length; i++) {
+        var btnHapus = "<button class='btn-hapus' href='#' onclick='hapus(" + i + ")'>Hapus</button>";
+        j = i + 1;
+        tabel.innerHTML += "<tr><td>" + j + "</td><td>" + indo[i] + "</td><td>" + inggris[i] + "</td><td>"+ btnHapus + "</tr>";
+    }
+};
+
+function hapus(id) {
+    indo.pop(id);
+    inggris.pop(id);
+    tampil();
+}
+
+tampil();
+    </script>
+</body>
+</html>
