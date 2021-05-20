@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Based</title>
+</head>
+<body>
+    <script>
+let buah = class{
+    constructor(nama,warna) {
+        this.nama = nama ;
+        this.warna = warna;
+    }
+    buahDetails(){
+        return `Nama = ${this.nama} :: Warna = ${this.warna}`;
+    }
+};
+
+let Jule = new buah ("Pisang", "Kuning");
+console.log(Jule.buahDetails());
+
+let jenisbuah = class extends buah {
+    constructor(nama, warna, ukuran){
+        super(nama,warna);
+        this.ukuran = ukuran;
+    }
+
+    jenisbuahDetail() {
+        return `Nama = ${this.nama} :: Warna = ${this.warna} :: Besar = ${this.ukuran}`;
+    }
+};
+
+let Fulaykhah = new jenisbuah("Pisang", "Kuning", "Ukuran Sedang");
+console.log(Fulaykhah.jenisbuahDetail());
+    </script>
+</body>
+</html>
+
