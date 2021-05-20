@@ -21,6 +21,22 @@
         };
     
         console.log(buahs.jenisbuah());
+
+        function buah2 (nama,warna,ukuran){
+            this.nama = nama;
+            this.warna = warna;
+            this.ukuran = ukuran;
+        }
+    
+        var macambuah = new buah2 ('PISANG', 'KUNING', 'UKURAN SEDANG');
+    
+        buah2.prototype.mcmbuah = function(){
+            console.log('SHINTA SEDANG MEMBELI' + ' ' + this.nama + ' ' + 'DI SUPERMARKET YANG BERWARNA' + ' ' + this.warna + ' ' + 'DAN BER' + this.ukuran);
+        
+        };
+    
+        console.log(macambuah.mcmbuah());
     </script>
 </body>
 </html>
+
