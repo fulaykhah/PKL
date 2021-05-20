@@ -14,11 +14,11 @@ let buah = class{
         this.warna = warna;
     }
     buahDetails(){
-        return `Nama = ${this.nama} :: Warna = ${this.warna}`;
+        return `SHINTA SEDANG MEMBELI ${this.nama} DI SUPERMARKET BERWARNA  ${this.warna}`;
     }
 };
 
-let a = new buah ("Pisang", "Kuning");
+let a = new buah ("APEL", "MERAH");
 console.log(a.buahDetails());
 
 let jenisbuah = class extends buah {
@@ -28,11 +28,11 @@ let jenisbuah = class extends buah {
     }
 
     jenisbuahDetail() {
-        return `Nama = ${this.nama} :: Warna = ${this.warna} :: Besar = ${this.ukuran}`;
+        return `SHINTA SEDANG MEMBELI ${this.nama} DI SUPERMARKET BERWARNA ${this.warna} DAN BER${this.ukuran}`;
     }
 };
 
-let b = new jenisbuah("Pisang", "Kuning", "Ukuran Sedang");
+let b = new jenisbuah("APEL", "MERAH", "UKURAN SEDANG");
 console.log(b.jenisbuahDetail());
     </script>
 </body>
