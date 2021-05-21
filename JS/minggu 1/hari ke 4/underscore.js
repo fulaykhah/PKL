@@ -1,5 +1,5 @@
 const _ = require("underscore")
-            var goal  = [
+            let goal  = [
             {
                 "nama" : "jule",
                 "nim" : "00000",
