@@ -1,0 +1,26 @@
+extends layout
+
+block content 
+ h4 Aplikasi Kalkulator
+ form(name='ffrom')
+   tbody 
+     tr
+       td Bilangan 1
+       td 
+         input(type='number' name='bil1')
+       br
+     tr 
+       td Bilangan 2
+       td 
+         input(type='number' name='bil2')
+       br
+     tr 
+       td Hasil 
+       td 
+          input(type="number" name="jumlah" readonly)
+          br
+          input.tombol(type='button' value=' + ' onclick='tambah()')
+          input.tombol(type='button' value='-' onclick='kurang()')
+          input.tombol(type='button' value='/' onclick='bagi()')
+          input.tombol(type='button' value='*' onclick='kali()')
+          input.tombol(type='reset' value='reset')
